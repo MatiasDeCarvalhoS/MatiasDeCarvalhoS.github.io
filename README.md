@@ -13,7 +13,8 @@ custódia adulta transparente; site como fonte canônica.
 - `assets/styles.css` — design system C (campo sereno)
 - `assets/favicon.svg` — favicon orgânico
 - `content/catalog.json` — catálogo editorial
-- `docs/IDENTITY.md` · `docs/ROADMAP.md` · `docs/PRIVACY-AND-SAFETY.md` · `docs/ARCHITECTURE.md`
+- `docs/IDENTITY.md` · `docs/ROADMAP.md` · `docs/PRIVACY-AND-SAFETY.md` · `docs/ARCHITECTURE.md` · `docs/adr/`
+- `AGENTS.md` (regras de operação) · `PROJECT_STATE.md` (estado vigente; decisão material: ADR-0001)
 - `.local/` — config operacional privada (gitignored, sem segredos)
 
 ## Operação
