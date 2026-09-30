@@ -1,22 +1,21 @@
-# Matias Carvalho — Digital Identity Foundation
+# Matias de Carvalho — Identidade digital independente
 
-Projeto independente para o site canônico de Matias Carvalho.
+Site canônico provisório: `https://matiasdecarvalhos.github.io/`
+Domínio futuro: `matiasdecarvalho.com` (sem compra nesta fase).
+GitHub: `MatiasDeCarvalhoS/MatiasDeCarvalhoS.github.io` · SSH: `github-matias`.
 
 ## Princípios
-- domínio próprio e identidade independente;
-- zero dependências de framework na fundação inicial;
-- site é a fonte canônica, redes sociais são canais satélites;
-- dados pessoais mínimos;
-- contatos, contratos, pagamentos e publicação sob custódia adulta enquanto necessário;
-- autoridade construída por evidência de projetos reais;
-- migração futura de custódia sem trocar domínio, marca ou histórico.
+Atenção antes de velocidade; processo visível; privacidade por padrão;
+custódia adulta transparente; site como fonte canônica.
 
 ## Estrutura
-- `index.html`: primeira vitrine pública;
-- `assets/styles.css`: apresentação;
-- `content/`: catálogo editorial;
-- `docs/SPEC-0001-digital-identity-foundation.md`: contrato inicial;
-- `docs/PRIVACY-AND-SAFETY.md`: regras obrigatórias.
+- `index.html` — Início, Projetos, Ideias, Produtos, Sobre, Contato, Links
+- `assets/styles.css` — design system C (campo sereno)
+- `assets/favicon.svg` — favicon orgânico
+- `content/catalog.json` — catálogo editorial
+- `docs/IDENTITY.md` · `docs/ROADMAP.md` · `docs/PRIVACY-AND-SAFETY.md` · `docs/ARCHITECTURE.md`
+- `.local/` — config operacional privada (gitignored, sem segredos)
 
-## Publicação
-Hospedar em domínio próprio. Não acoplar a identidade ao provedor de hospedagem. DNS e domínio devem permanecer sob custódia dos responsáveis até a transferência formal.
+## Operação
+Autoria: operador adulto (repo-local). Remote `origin` via SSH exclusiva.
+Sem analytics, sem tracking, sem checkout. Contato supervisionado.

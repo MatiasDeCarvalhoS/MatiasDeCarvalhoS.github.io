@@ -1,26 +1,17 @@
 {
-  "brand": "Matias Carvalho",
-  "status": "foundation",
+  "brand": "Matias de Carvalho",
+  "domain": "matiasdecarvalho.com",
+  "provisional_url": "https://matiasdecarvalhos.github.io/",
+  "github": "MatiasDeCarvalhoS/MatiasDeCarvalhoS.github.io",
+  "status": "identity-v1",
   "sections": [
-    {
-      "id": "projects",
-      "title": "Projetos",
-      "items": []
-    },
-    {
-      "id": "ideas",
-      "title": "Ideias",
-      "items": []
-    },
-    {
-      "id": "products",
-      "title": "Produtos",
-      "items": []
-    },
-    {
-      "id": "learning",
-      "title": "Aprendizados",
-      "items": []
-    }
+    { "id": "projects", "title": "Projetos", "items": [] },
+    { "id": "ideas", "title": "Ideias", "items": [] },
+    { "id": "products", "title": "Produtos", "items": [] },
+    { "id": "about", "title": "Sobre", "items": [] },
+    { "id": "contact", "title": "Contato", "items": [] },
+    { "id": "links", "title": "Links", "items": [
+      { "label": "GitHub", "url": "https://github.com/MatiasDeCarvalhoS" }
+    ] }
   ]
 }
