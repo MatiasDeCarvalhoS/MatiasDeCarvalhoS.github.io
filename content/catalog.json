@@ -1,14 +1,18 @@
 {
   "brand": "Matias de Carvalho",
   "domain": "matiasdecarvalho.com",
+  "domain_status": "nao-adquirido",
   "provisional_url": "https://matiasdecarvalhos.github.io/",
   "github": "MatiasDeCarvalhoS/MatiasDeCarvalhoS.github.io",
-  "status": "campo-aberto-v1",
+  "status": "site-v2-hub-multipagina",
   "sections": [
-    { "id": "inicio", "title": "Início", "items": [] },
-    { "id": "projetos", "title": "Projetos", "items": [] },
-    { "id": "caderno", "title": "Caderno", "items": [] },
-    { "id": "sobre", "title": "Sobre", "items": [] },
-    { "id": "contato", "title": "Contato", "items": [] }
-  ]
+    { "id": "inicio", "title": "Início", "path": "./", "items": [] },
+    { "id": "loja", "title": "Loja", "path": "loja/", "items": [] },
+    { "id": "blog", "title": "Blog", "path": "blog/", "items": [] },
+    { "id": "midias", "title": "Mídias", "path": "midias/", "items": [] },
+    { "id": "sobre", "title": "Sobre", "path": "sobre/", "items": [] },
+    { "id": "contato", "title": "Contato", "path": "contato/", "items": [] }
+  ],
+  "future_product_fields": ["id", "nome", "descricao", "preco", "disponibilidade", "categoria"],
+  "future_post_fields": ["id", "titulo", "data", "resumo"]
 }

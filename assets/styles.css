@@ -1,18 +1,24 @@
-/* Matias de Carvalho — linguagem "campo aberto".
+/* Matias de Carvalho — linguagem "campo aberto", fase multipagina.
    Tokens simples, sem framework. Branco como base, verde profundo,
-   palha como acento contido, divisórias finas. */
+   palha como acento contido, divisórias finas, tipografia editorial. */
 
 :root{
   --papel:#ffffff;
+  --base:#f8f6f1;
   --tinta:#1a2e1f;
   --suave:#4d6353;
+  --texto:#1f2937;
+  --secundario:#6b7280;
   --linha:#dde5dc;
   --verde:#14532d;
   --verde-fundo:#e8f0e9;
+  --verde-fundo-2:#0f3d22;
   --palha:#d9a521;
+  --palha-suave:#f3e3b3;
   --serif:"Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
-  --sans:system-ui,-apple-system,"Segoe UI",sans-serif;
-  --largura:62rem;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --largura:70rem;
+  --leitura:68ch;
   --raio:.375rem;
 }
 
@@ -26,11 +32,12 @@ body{
 
 /* Acessibilidade: pular para o conteúdo + foco visível */
 .skip{position:absolute;left:-9999px;top:0;background:var(--verde);color:#fff;padding:.625rem .875rem;z-index:10}
-.skip:focus{left:.75rem;top:.75rem}
+.skip:focus{left:.75rem;top:.75rem;color:#fff}
 a:focus-visible{outline:3px solid var(--verde);outline-offset:2px;border-radius:2px}
+a{color:var(--verde)}
 
 /* Topo: selo + nome + navegação em linha */
-.topo{border-bottom:1px solid var(--linha)}
+.topo{border-bottom:1px solid var(--linha);background:var(--papel)}
 .topo-inner{
   max-width:var(--largura);margin:0 auto;padding:1rem 1.5rem;
   display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 2rem;
@@ -41,11 +48,12 @@ a:focus-visible{outline:3px solid var(--verde);outline-offset:2px;border-radius:
 .topo nav{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem}
 .topo nav a{color:var(--tinta);text-decoration:none;padding:.5rem 0;border-bottom:2px solid transparent}
 .topo nav a:hover{color:var(--verde);border-bottom-color:var(--verde)}
+.topo nav a[aria-current="page"]{color:var(--verde);border-bottom-color:var(--palha);font-weight:600}
 
 /* Coluna de leitura */
 main{max-width:var(--largura);margin:0 auto;padding:2.5rem 1.5rem .5rem;min-width:0}
 section{scroll-margin-top:1rem}
-section p,section dl,section ol{max-width:68ch}
+section p,section dl,section ol,section ul.conteudo{max-width:var(--leitura)}
 
 /* Abertura */
 .hero{padding:1.5rem 0 .5rem}
@@ -65,12 +73,60 @@ h1{
 .hero-fatos dt{font-family:var(--serif);color:var(--verde);margin:0}
 .hero-fatos dd{margin:0}
 
-/* Seções numeradas: número serifado contido, sem kicker em caixa alta */
+/* Hero panorâmico da Home: composição abstrata própria (SVG inline) */
+.panorama{margin:2rem 0 0;border-radius:var(--raio);overflow:hidden;border:1px solid var(--linha)}
+.panorama svg{display:block;width:100%;height:auto}
+.panorama figcaption{
+  font-size:.85rem;color:var(--suave);padding:.625rem 1rem;
+  border-top:1px solid var(--linha);background:var(--base);
+}
+
+/* Faixa institucional sob o hero */
+.faixa{text-align:center;padding:1.75rem 0 .5rem}
+.faixa h2{margin-bottom:.25rem}
+.faixa p{margin:0 auto;max-width:62ch;color:var(--suave)}
+
+/* Seções numeradas */
 .sec-num{font-family:var(--serif);font-style:italic;color:var(--suave);font-size:1rem;margin:0}
 h2{font-family:var(--serif);font-weight:500;font-size:1.6rem;margin:.125rem 0 .625rem}
 h3{font-family:var(--serif);font-weight:500;font-size:1.15rem;margin:1.5rem 0 .375rem}
 
 hr{border:0;border-top:1px solid var(--linha);margin:2.25rem 0}
+
+.sec-cab{display:flex;flex-wrap:wrap;align-items:baseline;gap:.25rem 1rem}
+.sec-cab h2{margin-right:auto}
+.ver-todas{font-size:.9rem;white-space:nowrap}
+
+/* Grades e cartões */
+.grade{display:grid;gap:1.25rem;margin:1.25rem 0 0}
+@media(min-width:40rem){.grade{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:64rem){.grade.cols-4{grid-template-columns:repeat(4,1fr)}}
+.cartao{
+  border:1px solid var(--linha);border-radius:var(--raio);
+  overflow:hidden;background:var(--papel);display:flex;flex-direction:column;
+}
+.cartao-arte{background:var(--verde-fundo);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;color:var(--verde)}
+.cartao-arte svg{width:100%;height:100%;display:block}
+.cartao-corpo{padding:.875rem 1rem;display:flex;flex-direction:column;gap:.25rem;flex:1}
+.cartao-corpo h3{margin:0;font-size:1.05rem}
+.cartao-corpo p{margin:0;font-size:.92rem;color:var(--suave)}
+.cartao-data{font-size:.82rem;color:var(--secundario)}
+.etiqueta{
+  align-self:flex-start;font-size:.75rem;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--verde);border:1px solid var(--verde);border-radius:999px;padding:.125rem .625rem;
+}
+
+/* Blocos de categoria / mídia: lado a lado texto + motivo gráfico */
+.bloco-cat{
+  display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--tinta);
+  border:1px solid var(--linha);border-radius:var(--raio);padding:1rem 1.125rem;background:var(--base);
+}
+.bloco-cat:hover{border-color:var(--verde)}
+.bloco-cat:hover .bloco-nome{color:var(--verde)}
+.bloco-icone{flex:none;width:2.75rem;height:2.75rem;border-radius:50%;background:var(--verde);color:#fff;display:flex;align-items:center;justify-content:center}
+.bloco-nome{font-family:var(--serif);font-size:1.05rem;display:block}
+.bloco-desc{font-size:.88rem;color:var(--suave);display:block}
+.bloco-seta{margin-left:auto;color:var(--palha);font-size:1.25rem;flex:none}
 
 /* Estado vazio honesto: faixa verde-suave com marcador palha */
 .vazio{background:var(--verde-fundo);border-left:3px solid var(--palha);border-radius:0 var(--raio) var(--raio) 0;padding:.875rem 1rem;max-width:64ch}
@@ -79,9 +135,22 @@ hr{border:0;border-top:1px solid var(--linha);margin:2.25rem 0}
 .nota p{margin-bottom:0}
 
 /* Linha de continuidade */
-.linha{list-style:none;margin:.75rem 0 0;padding:0;display:grid;gap:.625rem}
+.linha{list-style:none;margin:.75rem 0 0;padding:0;display:grid;gap:.625rem;max-width:var(--leitura)}
 .linha li{border-left:2px solid var(--verde);padding-left:.875rem}
 .linha time{font-family:var(--serif);color:var(--verde)}
+
+/* Bloco institucional + chamada */
+.institucional{background:var(--verde-fundo-2);color:#f2f5f1;border-radius:var(--raio);padding:1.75rem 1.5rem;margin-top:2.25rem}
+.institucional h2{color:#fff}
+.institucional p{color:#cfdccf}
+.institucional .kicker{color:var(--palha);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin:0 0 .5rem}
+.btn{
+  display:inline-block;text-decoration:none;font-weight:600;
+  background:var(--palha);color:#241a02;border-radius:var(--raio);padding:.7rem 1.4rem;min-height:2.75rem;
+}
+.btn:hover{background:var(--palha-suave)}
+.btn-fantasma{background:transparent;color:#fff;border:1px solid #fff}
+.btn-fantasma:hover{background:rgba(255,255,255,.12)}
 
 /* Contato em destaque suave */
 .aviso{background:var(--verde-fundo);border-radius:var(--raio);padding:1.125rem 1.25rem;margin-top:2.25rem}
@@ -89,11 +158,16 @@ hr{border:0;border-top:1px solid var(--linha);margin:2.25rem 0}
 
 /* Rodapé */
 footer{border-top:1px solid var(--linha);margin-top:2.5rem}
+.rodape-verde{background:var(--verde-fundo-2);color:#dfe8de;border-top:0}
 .rodape-inner{max-width:var(--largura);margin:0 auto;padding:1.375rem 1.5rem 3.5rem;color:var(--suave);font-size:.9rem}
+.rodape-verde .rodape-inner{color:#cfdccf}
 .rodape-inner p{margin:.375rem 0}
 .rodape-inner a{color:var(--verde)}
+.rodape-verde .rodape-inner a{color:#fff}
+.rodape-marca{font-family:var(--serif);font-size:1.1rem;color:var(--tinta)}
+.rodape-verde .rodape-marca{color:#fff}
 
-/* Telas médias: fatos do hero em uma linha de definição mais larga */
+/* Telas médias: fatos do hero em linha + topo sem quebra */
 @media(min-width:48rem){
   .hero-fatos{grid-template-columns:repeat(3,1fr)}
   .hero-fatos div{grid-template-columns:1fr}
@@ -103,9 +177,10 @@ footer{border-top:1px solid var(--linha);margin-top:2.5rem}
 @media(max-width:30rem){
   .topo-inner{padding:.875rem 1rem}
   main{padding:1.75rem 1rem .5rem}
-  .topo nav a{padding:.625rem 0}
+  .topo nav a{padding:.625rem .25rem}
   .hero-fatos div{grid-template-columns:1fr}
   h1{font-size:2rem}
+  .institucional{padding:1.375rem 1.125rem}
 }
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
