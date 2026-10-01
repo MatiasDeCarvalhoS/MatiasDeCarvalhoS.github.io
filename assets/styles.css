@@ -1,34 +1,111 @@
+/* Matias de Carvalho — linguagem "campo aberto".
+   Tokens simples, sem framework. Branco como base, verde profundo,
+   palha como acento contido, divisórias finas. */
+
 :root{
---bg:#ffffff;--ink:#1a2e1f;--muted:#4d6353;--line:#dde5dc;
---green:#14532d;--green-soft:#e8f0e9;
---serif:"Palatino Linotype",Palatino,Georgia,serif;--sans:system-ui,-apple-system,"Segoe UI",sans-serif;
---max:1060px;
+  --papel:#ffffff;
+  --tinta:#1a2e1f;
+  --suave:#4d6353;
+  --linha:#dde5dc;
+  --verde:#14532d;
+  --verde-fundo:#e8f0e9;
+  --palha:#d9a521;
+  --serif:"Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",sans-serif;
+  --largura:62rem;
+  --raio:.375rem;
 }
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65}
-.skip{position:absolute;left:-9999px;top:0;background:var(--green);color:#fff;padding:10px 14px}
-.skip:focus{left:12px;top:12px}
-.layout{max-width:var(--max);margin:0 auto;padding:0 24px;display:grid;grid-template-columns:250px 1fr;gap:48px}
-.side{padding:36px 0;border-right:1px solid var(--line)}
-.brand{font-family:var(--serif);font-size:1.9rem;line-height:1.05;margin:0 0 6px}
-.sub{color:var(--muted);font-size:.88rem;margin:0 0 22px}
-.side nav{display:grid;gap:2px}
-.side nav a{color:var(--ink);text-decoration:none;padding:7px 0;border-bottom:1px solid var(--line)}
-.side nav a:hover{color:var(--green);border-bottom-color:var(--green)}
-a:focus-visible{outline:3px solid var(--green);outline-offset:2px}
-main{padding:36px 0 8px;min-width:0}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.1;margin:0 0 12px;max-width:20ch}
-h2{font-family:var(--serif);font-size:1.55rem;margin:0 0 8px}
-.hero{padding:18px 0 8px}
-.lead{font-size:1.12rem;max-width:58ch}
-hr{border:0;border-top:1px solid var(--line);margin:34px 0}
-.button{display:inline-block;margin-top:12px;padding:11px 22px;background:var(--green);color:#fff;text-decoration:none;font-weight:700;border-radius:4px}
-.button:hover{background:#0b3d20}
-.empty{background:var(--green-soft);border-radius:4px;padding:14px 16px;max-width:64ch}
-.muted{color:var(--muted)}
-.notice{margin-top:34px;background:var(--green-soft);padding:18px 20px;border-radius:4px}
-section p{max-width:68ch}
-footer{max-width:var(--max);margin:0 auto;padding:22px 24px 56px;color:var(--muted);font-size:.9rem}
-@media(max-width:760px){.layout{grid-template-columns:1fr;gap:0}.side{border-right:0;border-bottom:1px solid var(--line)}}
+body{
+  margin:0;background:var(--papel);color:var(--tinta);
+  font-family:var(--sans);line-height:1.65;
+  font-size:1rem;
+}
+
+/* Acessibilidade: pular para o conteúdo + foco visível */
+.skip{position:absolute;left:-9999px;top:0;background:var(--verde);color:#fff;padding:.625rem .875rem;z-index:10}
+.skip:focus{left:.75rem;top:.75rem}
+a:focus-visible{outline:3px solid var(--verde);outline-offset:2px;border-radius:2px}
+
+/* Topo: selo + nome + navegação em linha */
+.topo{border-bottom:1px solid var(--linha)}
+.topo-inner{
+  max-width:var(--largura);margin:0 auto;padding:1rem 1.5rem;
+  display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 2rem;
+}
+.marca{display:flex;align-items:center;gap:.625rem;text-decoration:none;color:var(--tinta);margin-right:auto}
+.marca-selo{flex:none}
+.marca-nome{font-family:var(--serif);font-size:1.25rem;line-height:1.2}
+.topo nav{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem}
+.topo nav a{color:var(--tinta);text-decoration:none;padding:.5rem 0;border-bottom:2px solid transparent}
+.topo nav a:hover{color:var(--verde);border-bottom-color:var(--verde)}
+
+/* Coluna de leitura */
+main{max-width:var(--largura);margin:0 auto;padding:2.5rem 1.5rem .5rem;min-width:0}
+section{scroll-margin-top:1rem}
+section p,section dl,section ol{max-width:68ch}
+
+/* Abertura */
+.hero{padding:1.5rem 0 .5rem}
+.hero-estado{
+  display:flex;align-items:center;gap:.5625rem;
+  color:var(--suave);font-size:.9rem;margin:0 0 1rem;
+}
+.semente{width:.625rem;height:.625rem;border-radius:50%;background:var(--palha);flex:none}
+h1{
+  font-family:var(--serif);font-weight:500;
+  font-size:clamp(2rem,4.6vw,3.1rem);line-height:1.12;
+  margin:0 0 .875rem;max-width:20ch;letter-spacing:.002em;
+}
+.lead{font-size:1.125rem;max-width:58ch}
+.hero-fatos{display:grid;gap:.5rem 2rem;margin:1.75rem 0 0;padding:1.25rem 0 0;border-top:1px solid var(--linha)}
+.hero-fatos div{display:grid;grid-template-columns:7.5rem 1fr;gap:.25rem 1rem}
+.hero-fatos dt{font-family:var(--serif);color:var(--verde);margin:0}
+.hero-fatos dd{margin:0}
+
+/* Seções numeradas: número serifado contido, sem kicker em caixa alta */
+.sec-num{font-family:var(--serif);font-style:italic;color:var(--suave);font-size:1rem;margin:0}
+h2{font-family:var(--serif);font-weight:500;font-size:1.6rem;margin:.125rem 0 .625rem}
+h3{font-family:var(--serif);font-weight:500;font-size:1.15rem;margin:1.5rem 0 .375rem}
+
+hr{border:0;border-top:1px solid var(--linha);margin:2.25rem 0}
+
+/* Estado vazio honesto: faixa verde-suave com marcador palha */
+.vazio{background:var(--verde-fundo);border-left:3px solid var(--palha);border-radius:0 var(--raio) var(--raio) 0;padding:.875rem 1rem;max-width:64ch}
+.nota{border:1px solid var(--linha);border-radius:var(--raio);padding:1rem 1.125rem;margin-top:1.25rem;max-width:64ch}
+.nota h3{margin-top:0}
+.nota p{margin-bottom:0}
+
+/* Linha de continuidade */
+.linha{list-style:none;margin:.75rem 0 0;padding:0;display:grid;gap:.625rem}
+.linha li{border-left:2px solid var(--verde);padding-left:.875rem}
+.linha time{font-family:var(--serif);color:var(--verde)}
+
+/* Contato em destaque suave */
+.aviso{background:var(--verde-fundo);border-radius:var(--raio);padding:1.125rem 1.25rem;margin-top:2.25rem}
+.aviso p:last-child{margin-bottom:0}
+
+/* Rodapé */
+footer{border-top:1px solid var(--linha);margin-top:2.5rem}
+.rodape-inner{max-width:var(--largura);margin:0 auto;padding:1.375rem 1.5rem 3.5rem;color:var(--suave);font-size:.9rem}
+.rodape-inner p{margin:.375rem 0}
+.rodape-inner a{color:var(--verde)}
+
+/* Telas médias: fatos do hero em uma linha de definição mais larga */
+@media(min-width:48rem){
+  .hero-fatos{grid-template-columns:repeat(3,1fr)}
+  .hero-fatos div{grid-template-columns:1fr}
+}
+
+/* Telas pequenas: topo empilha, toque confortável */
+@media(max-width:30rem){
+  .topo-inner{padding:.875rem 1rem}
+  main{padding:1.75rem 1rem .5rem}
+  .topo nav a{padding:.625rem 0}
+  .hero-fatos div{grid-template-columns:1fr}
+  h1{font-size:2rem}
+}
+
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
