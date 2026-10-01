@@ -9,10 +9,11 @@ Atenção antes de velocidade; processo visível; privacidade por padrão;
 custódia adulta transparente; site como fonte canônica.
 
 ## Estrutura
-- `index.html` — Início, Projetos, Ideias, Produtos, Sobre, Contato, Links
-- `assets/styles.css` — design system C (campo sereno)
-- `assets/favicon.svg` — favicon orgânico
+- `index.html` — Início, Projetos, Caderno, Sobre, Contato (+ rodapé)
+- `assets/styles.css` — linguagem “campo aberto” (tokens no próprio CSS)
+- `assets/favicon.svg` — selo próprio (campo verde + semente palha)
 - `content/catalog.json` — catálogo editorial
+- `docs/HOSTING-DECISION.md` — pacote `HOSTING_DECISION_REQUIRED` (decisão humana pendente)
 - `docs/IDENTITY.md` · `docs/ROADMAP.md` · `docs/PRIVACY-AND-SAFETY.md` · `docs/ARCHITECTURE.md` · `docs/adr/`
 - `AGENTS.md` (regras de operação) · `PROJECT_STATE.md` (estado vigente; decisão material: ADR-0001)
 - `.local/` — config operacional privada (gitignored, sem segredos)

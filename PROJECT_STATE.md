@@ -1,16 +1,20 @@
 # Estado atual — Matias de Carvalho
 
 Atualizado: 2026-10-01
-Status: `IDENTIDADE-V1-PUBLICADA / GOVERNANCA-METODOLOGICA-ADOTADA`
+Status: `SITE-PERSONALIZADO-CAMPO-ABERTO / HOSTING_DECISION_REQUIRED`
 
 ## Fatos vigentes
 
-- Site estático independente publicado: `https://matiasdecarvalhos.github.io/`
-  (Pages ativo, verificado HTTP 200 em 2026-10-01). Repo remoto
-  `MatiasDeCarvalhoS/MatiasDeCarvalhoS.github.io` criado na Personal Account;
-  chave SSH `matias-de-carvalho-github` registrada; push inicial `main → origin`
-  concluído com upstream `origin/main`.
-- Identidade C (“Campo sereno”), catálogo editorial e docs de identidade,
+- Site “campo aberto” implementado e validado localmente (HTML+CSS, zero JS):
+  Início, Projetos, Caderno, Sobre, Contato; selo próprio; estados vazios
+  honestos; sem PII, analytics ou dependências externas.
+- GitHub Pages (`https://matiasdecarvalhos.github.io/`) passa a SUPERFÍCIE
+  PROVISÓRIA NÃO CANÔNICA (ver ADR-0002). GitHub = versionamento/backup.
+  Produção futura = hospedagem independente, decisão humana pendente
+  (`docs/HOSTING-DECISION.md` → `HOSTING_DECISION_REQUIRED`).
+- Repo remoto `MatiasDeCarvalhoS/MatiasDeCarvalhoS.github.io` na Personal
+  Account; chave SSH `matias-de-carvalho-github`; upstream `origin/main`.
+- Identidade “campo aberto”, catálogo editorial e docs de identidade,
   arquitetura, roadmap e privacy/safety vigentes em `docs/`.
 - SPEC ativa: `docs/SPEC-0001-digital-identity-foundation.md` (`PROPOSTA INICIAL`).
 - Decisão material vigente: `docs/adr/ADR-0001-matias-owner-independente-referencia-metodologica-ilumino.md` — Matias é owner
@@ -30,4 +34,6 @@ Status: `IDENTIDADE-V1-PUBLICADA / GOVERNANCA-METODOLOGICA-ADOTADA`
 
 ## Próximo
 
-- Fase 1 do `docs/ROADMAP.md` (primeiro projeto com passo a passo honesto).
+- Decisão humana de hospedagem (`docs/HOSTING-DECISION.md`); depois, missão
+  de publicação externa validada. Em paralelo, Fase 1 do `docs/ROADMAP.md`
+  (primeiro projeto com passo a passo honesto).

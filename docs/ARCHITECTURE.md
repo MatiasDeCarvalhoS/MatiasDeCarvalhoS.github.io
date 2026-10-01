@@ -1,12 +1,21 @@
 # Architecture — Matias de Carvalho
 
 - Tipo: site estático, HTML + CSS, zero framework, zero build, zero analytics, zero cookies.
-- Entrada: `index.html`; estilos: `assets/styles.css`; favicon: `assets/favicon.svg`.
-- Catálogo editorial: `content/catalog.json`.
-- Metadata: canonical `https://matiasdecarvalhos.github.io/`, Open Graph básico, `robots.txt`, `sitemap.xml`.
+- Entrada: `index.html`; estilos: `assets/styles.css`; favicon: `assets/favicon.svg` (selo próprio: campo verde + semente palha).
+- Linguagem visual: “campo aberto” — base branca, verde `#14532d`, acento palha `#d9a521`, divisórias finas, seções numeradas, tokens simples no próprio CSS.
+- Arquitetura da informação: Início, Projetos, Caderno, Sobre, Contato (+ rodapé com GitHub e nota de hospedagem). Sem páginas vazias artificiais; estados vazios honestos.
+- Catálogo editorial: `content/catalog.json` (espelha as 5 seções).
+- Metadata: canonical provisório `https://matiasdecarvalhos.github.io/`, Open Graph básico, `robots.txt`, `sitemap.xml`.
 - Config operacional privada: `.local/` (gitignored, repo-local; sem segredos).
 - Remoto: `origin` → `git@github-matias:MatiasDeCarvalhoS/MatiasDeCarvalhoS.github.io.git` (SSH exclusiva).
-- Hospedagem provisória: GitHub Pages do repo `<user>.github.io`; futura: domínio próprio.
+
+## Papéis de hospedagem (ver ADR-0002)
+
+- GitHub = `SOURCE_CONTROL_AND_BACKUP` (versionamento/backup; não é produção).
+- GitHub Pages = superfície provisória não canônica (online para evitar despublicação prematura; desligamento só em missão própria futura).
+- Produção futura = hospedagem independente (decisão humana pendente — ver `docs/HOSTING-DECISION.md`).
+- Domínio canônico futuro: `matiasdecarvalho.com` (não adquirido).
+
 - Isolamento: repo, remote, SSH, Chrome profile e Google próprios; nada compartilhado com irmãos.
 
 ## Independência de ownership e física (ver ADR-0001)
