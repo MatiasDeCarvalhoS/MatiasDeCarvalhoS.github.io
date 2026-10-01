@@ -1,13 +1,18 @@
 # Estado atual — Matias de Carvalho
 
 Atualizado: 2026-10-01
-Status: `SITE-PERSONALIZADO-CAMPO-ABERTO / HOSTING_DECISION_REQUIRED`
+Status: `SITE_DEVELOPED_AND_VERSIONED / HOSTING_DEFERRED`
 
 ## Fatos vigentes
 
-- Site “campo aberto” implementado e validado localmente (HTML+CSS, zero JS):
-  Início, Projetos, Caderno, Sobre, Contato; selo próprio; estados vazios
-  honestos; sem PII, analytics ou dependências externas.
+- Site v2 “campo aberto” multipágina implementado e validado localmente
+  (HTML+CSS, zero JS): Home/hub + Loja, Blog/Caderno, Mídias, Sobre, Contato;
+  selo próprio; panorama abstrato próprio (sem fotografia de pessoa);
+  estados vazios honestos; sem produtos, posts ou canais fictícios;
+  sem PII, analytics ou dependências externas.
+- Loja preparada arquiteturalmente sem comércio falso; blog preparado sem
+  posts fictícios; mídias preparadas sem contas inventadas; contato sem
+  e-mail publicado e sem formulário funcional (sem backend).
 - GitHub Pages (`https://matiasdecarvalhos.github.io/`) passa a SUPERFÍCIE
   PROVISÓRIA NÃO CANÔNICA (ver ADR-0002). GitHub = versionamento/backup.
   Produção futura = hospedagem independente, decisão humana pendente

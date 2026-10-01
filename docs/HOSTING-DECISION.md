@@ -3,10 +3,11 @@
 Estado: **decisão humana pendente**. Nada foi contratado, comprado,
 configurado ou desligado. GitHub Pages permanece provisoriamente online.
 
-Produto a hospedar: site estático (`index.html` + `assets/styles.css` +
-`assets/favicon.svg` + `content/catalog.json`), zero build, zero backend,
-zero analytics. Qualquer host estático serve; saída a qualquer momento é
-copiar arquivos.
+Produto a hospedar: site estático multipágina (`index.html` +
+`loja/` + `blog/` + `midias/` + `sobre/` + `contato/` + `assets/styles.css` +
+`assets/favicon.svg` + `content/catalog.json` + `sitemap.xml` + `robots.txt`),
+zero build, zero backend, zero analytics. Qualquer host estático serve;
+saída a qualquer momento é copiar arquivos.
 
 ## Opção A (recomendada) — Cloudflare Pages
 

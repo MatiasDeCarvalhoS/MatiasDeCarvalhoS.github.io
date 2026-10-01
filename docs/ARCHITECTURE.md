@@ -1,11 +1,12 @@
 # Architecture — Matias de Carvalho
 
 - Tipo: site estático, HTML + CSS, zero framework, zero build, zero analytics, zero cookies.
-- Entrada: `index.html`; estilos: `assets/styles.css`; favicon: `assets/favicon.svg` (selo próprio: campo verde + semente palha).
-- Linguagem visual: “campo aberto” — base branca, verde `#14532d`, acento palha `#d9a521`, divisórias finas, seções numeradas, tokens simples no próprio CSS.
-- Arquitetura da informação: Início, Projetos, Caderno, Sobre, Contato (+ rodapé com GitHub e nota de hospedagem). Sem páginas vazias artificiais; estados vazios honestos.
-- Catálogo editorial: `content/catalog.json` (espelha as 5 seções).
-- Metadata: canonical provisório `https://matiasdecarvalhos.github.io/`, Open Graph básico, `robots.txt`, `sitemap.xml`.
+- Tipo: site estático multipágina, HTML + CSS, zero framework, zero build, zero JS, zero analytics, zero cookies.
+- Entradas: `index.html` (Home/hub) + `loja/`, `blog/`, `midias/`, `sobre/`, `contato/` (cada uma com `index.html` próprio); estilos: `assets/styles.css`; favicon: `assets/favicon.svg` (selo próprio: campo verde + semente palha). Paths relativos — funciona em qualquer servidor HTTP estático, em qualquer base.
+- Linguagem visual: “campo aberto” — base branca, verde `#14532d`, acento palha `#d9a521`, divisórias finas, seções numeradas, hero panorâmico em composição gráfica abstrata própria (sem fotografia de pessoa), tokens simples no próprio CSS.
+- Arquitetura da informação: Início (hub), Loja, Blog/Caderno, Mídias, Sobre, Contato (+ rodapé verde-escuro com navegação). Sem páginas vazias artificiais; estados vazios honestos. Sem carrinho, checkout, login, comentários, API, banco ou formulário funcional.
+- Catálogo editorial: `content/catalog.json` (espelha as 6 seções + campos futuros de produto/post, sem itens fictícios).
+- Metadata: title/description por página, Open Graph básico sem `og:url`; sem tag `canonical` (não há domínio canônico real; `github.io` não é declarado canônico final). `robots.txt`, `sitemap.xml` (6 URLs da superfície provisória).
 - Config operacional privada: `.local/` (gitignored, repo-local; sem segredos).
 - Remoto: `origin` → `git@github-matias:MatiasDeCarvalhoS/MatiasDeCarvalhoS.github.io.git` (SSH exclusiva).
 
