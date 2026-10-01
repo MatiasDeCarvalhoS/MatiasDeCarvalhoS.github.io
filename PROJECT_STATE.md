@@ -1,19 +1,22 @@
 # Estado atual — Matias de Carvalho
 
-Atualizado: 2026-09-30
-Status: `IDENTIDADE-V1-ESTABELECIDA / GOVERNANCA-METODOLOGICA-ADOTADA`
+Atualizado: 2026-10-01
+Status: `IDENTIDADE-V1-PUBLICADA / GOVERNANCA-METODOLOGICA-ADOTADA`
 
 ## Fatos vigentes
 
-- Site estático independente no ar como base local; publicação inicial (Pages)
-  é missão separada, ainda não executada.
+- Site estático independente publicado: `https://matiasdecarvalhos.github.io/`
+  (Pages ativo, verificado HTTP 200 em 2026-10-01). Repo remoto
+  `MatiasDeCarvalhoS/MatiasDeCarvalhoS.github.io` criado na Personal Account;
+  chave SSH `matias-de-carvalho-github` registrada; push inicial `main → origin`
+  concluído com upstream `origin/main`.
 - Identidade C (“Campo sereno”), catálogo editorial e docs de identidade,
   arquitetura, roadmap e privacy/safety vigentes em `docs/`.
 - SPEC ativa: `docs/SPEC-0001-digital-identity-foundation.md` (`PROPOSTA INICIAL`).
 - Decisão material vigente: `docs/adr/ADR-0001-matias-owner-independente-referencia-metodologica-ilumino.md` — Matias é owner
   independente; iLúmino é referência metodológica, não parent workspace.
-- Remote `origin` via SSH exclusiva `github-matias`, sem upstream configurado;
-  pushes só em missão de publicação própria.
+- Remote `origin` via SSH exclusiva `github-matias`, com upstream `origin/main`
+  configurado no push inicial.
 
 ## Fronteiras vigentes
 
@@ -28,4 +31,3 @@ Status: `IDENTIDADE-V1-ESTABELECIDA / GOVERNANCA-METODOLOGICA-ADOTADA`
 ## Próximo
 
 - Fase 1 do `docs/ROADMAP.md` (primeiro projeto com passo a passo honesto).
-- Publicação inicial via GitHub Pages em missão própria, quando autorizada.
